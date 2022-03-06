@@ -1,0 +1,16 @@
+{
+  "name": "batteriescharge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	  "start-client": "cd client && npm run start",
+    "start-server": "cd server && npm run start"
+  },
+  "author": "DainWs",
+  "license": "ISC",
+  "workspaces": [
+    "client/",
+	  "server/"
+  ]
+}
