@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "bash install.sh",
     "start": "nodemon service.js",
     "start-client": "cd client && npm run serve",
     "start-server": "cd server && npm run start"
@@ -12,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "pm2": "^5.2.0"
   },
   "workspaces": [
     "client/",
