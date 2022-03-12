@@ -1,9 +1,10 @@
 <!-- JS -->
-<script src="../assets/js/Battery.js"></script>
+<script src="../assets/js/BatteryView.js"></script>
 
 <!-- HTML -->
 <template>
-   <b-card :title={}>
-     <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
-   </b-card>
+  <div class="col-md-3">
+    <h3 class="text-align-center">{{battery.nombre}}</h3>
+    <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
+  </div>
 </template>

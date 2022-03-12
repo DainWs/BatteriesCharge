@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export default {
     name: "Battery",
     props: {
@@ -9,7 +7,7 @@ export default {
       return {
         chartOptions: {
           chart: {
-            id: battery.id
+            id: this.battery.id
           },
           xaxis: {
             categories: [0, 5, 10]

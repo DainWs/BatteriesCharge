@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "start-client": "cd client && npm run start",
+    "start": "nodemon service.js",
+    "start-client": "cd client && npm run serve",
     "start-server": "cd server && npm run start"
   },
   "author": "DainWs",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
   "workspaces": [
     "client/",
-	  "server/"
+    "server/"
   ]
 }

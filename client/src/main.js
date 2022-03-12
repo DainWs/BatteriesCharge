@@ -1,26 +1,12 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue';
-import App from './App';
-import router from './router';
-import VueApexCharts from 'vue-apexcharts'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueApexCharts from "vue3-apexcharts";
 
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-Vue.config.productionTip = false;
-
-Vue.use(VueApexCharts)
-Vue.use(BootstrapVue);
-Vue.use(IconsPlugin);
-
-Vue.component('apexchart', VueApexCharts)
-
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-});
+let app = createApp(App);
+app.config.productionTip = false;
+app.use(VueApexCharts);
+app.mount('#app');

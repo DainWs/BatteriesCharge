@@ -1,84 +1,70 @@
-const express = require('express');
-const router = express.Router();
-
 const DBHelper = require('./utils/DBHelper');
 const sql = require('./sqlMap');
 
+const api = {};
+
 // aumentar Battery
-router.post('/addBattery', (req, res) => {
-    let sqlStr = sql.batteries.add;
-    let params = req.body;
+api.addBattery = function(req, res) {
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [params.id, params.name], (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            res.json(result);
+    conn.query(sql.batteries.add, 
+        [params.id, params.name],
+        (err, result) => {
+            return (err)
+                ? res.status(300).json(err)
+                : res.status(200).json(result);
         }
-    });
+    );
     conn.end();
-});
+};
 
 // consulta al Battery
-router.post('/getBattery', (req, res) => {
-    let sqlStr = sql.batteries.select;
-    let params = req.body;
+api.getBattery = function(req, res) {
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [params.id], (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            console.log(result);
-            res.json(result);
-        }
+    conn.query(sql.batteries.select, [], (err, result) => {
+        return (err)
+            ? res.status(300).json(err)
+            : res.status(200).json(result);
     });
     conn.end();
-});
+};
 
 // consulta al Batteries
-router.post('/getBatteries', (req, res) => {
-    let sqlStr = sql.batteries.selectAll;
+api.getBatteries = function(req, res) {
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [], (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            console.log(result);
-            res.json(result);
-        }
+    conn.query(sql.batteries.selectAll, [], (err, result) => {
+        return (err)
+            ? res.status(300).json(err)
+            : res.status(200).json(result);
     });
     conn.end();
-});
+};
 
 // aumentar Battery entry
-router.post('/addBatteryEntry', (req, res) => {
-    let sqlStr = sql.batteries.add;
-    let params = req.body;
+api.addBatteryEntry = function(req, res) {
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [params.batteryId, params.id, params.voltage], (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            res.json(result);
+    conn.query(sql.batteries.add, 
+        [params.batteryId, params.id, params.voltage], 
+        (err, result) => {
+            return (err)
+                ? res.status(300).json(err)
+                : res.status(200).json(result);
         }
-    });
+    );
     conn.end();
-});
+};
 
 // consulta batteries entries list
-router.post('/getBatteriesEntries', (req, res) => {
-    let sqlStr = sql.batteriesEntries.select;
-    let params = req.body;
+api.getBatteriesEntries = function(req, res) {
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [params.batteryId], (err, result) => {
-        if (err) {
-            res.json(err);
-        } else {
-            console.log(result);
-            res.json(result);
+    conn.query(sql.batteriesEntries.select, 
+        [req.body], 
+        (err, result) => {
+            return (err)
+                ? res.status(300).json(err)
+                : res.status(200).json(result);
         }
-    });
+    );
     conn.end();
-});
+};
 
-module.exports = router;
+module.exports = api;
