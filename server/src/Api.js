@@ -5,6 +5,7 @@ const api = {};
 
 // aumentar Battery
 api.addBattery = function(req, res) {
+    let params = req.body;
     let conn = new DBHelper().getConn();
     conn.query(sql.batteries.add, 
         [params.id, params.name],
@@ -41,9 +42,10 @@ api.getBatteries = function(req, res) {
 
 // aumentar Battery entry
 api.addBatteryEntry = function(req, res) {
+    let params = req.body;
     let conn = new DBHelper().getConn();
-    conn.query(sql.batteries.add, 
-        [params.batteryId, params.id, params.voltage], 
+    conn.query(sql.batteriesEntries.add, 
+        [params.id, params.batteryId, params.voltage, new Date(params.fecha)], 
         (err, result) => {
             return (err)
                 ? res.status(300).json(err)
@@ -55,9 +57,10 @@ api.addBatteryEntry = function(req, res) {
 
 // consulta batteries entries list
 api.getBatteriesEntries = function(req, res) {
+    console.log(req.body);
     let conn = new DBHelper().getConn();
     conn.query(sql.batteriesEntries.select, 
-        [req.body], 
+        [req.body.id], 
         (err, result) => {
             return (err)
                 ? res.status(300).json(err)

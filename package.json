@@ -12,6 +12,7 @@
   "author": "DainWs",
   "license": "ISC",
   "dependencies": {
+    "child_process": "^1.0.2",
     "express": "^4.17.3",
     "nodemon": "^2.0.15",
     "pm2": "^5.2.0"

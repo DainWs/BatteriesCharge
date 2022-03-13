@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="d-flex">
+      <img src="./assets/logo.png" height="50">
+      <h1>Monitor de Baterias</h1>
+    </div>
     <Home/>
   </div>
 </template>

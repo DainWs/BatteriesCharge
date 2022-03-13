@@ -9,10 +9,10 @@ var sqlMap = {
     },
 	batteriesEntries: {
 		// Agregar batteriesEntry
-		add: 'INSERT INTO batteriesEntries(batteryId, id, voltage) VALUES (?, ?, ?)',
+		add: 'INSERT INTO BATTERIES_ENTRY VALUES (?, ?, ?, ?)',
 		// consulta al batteriesEntry
-        selectAll: 'SELECT * FROM batteriesEntries',
-		select: 'SELECT * FROM batteriesEntries WHERE batteryId == "%"?"%"'
+        selectAll: 'SELECT * FROM BATTERIES_ENTRY',
+		select: 'SELECT * FROM BATTERIES_ENTRY WHERE batteryId == "%"?"%"'
 	}
 };
 
