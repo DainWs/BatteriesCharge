@@ -1,10 +1,10 @@
 import axios from "axios";
-import Battery from '../../components/Battery.vue';
+import BatteryItem from './models/BatteryItem.vue';
 
 export default {
-    name: "Home",
+    name: "BatteryList",
     components: {
-        Battery
+        BatteryItem
     },
     data() {
         return {
@@ -12,7 +12,8 @@ export default {
         };
     },
     mounted() {
-       this.getBatteries();
+        //this.getBatteries();
+        //setInterval(this.getBatteries.bind(this), (5 * 1000));
        console.log(this.batteries);
     },
     methods: {
