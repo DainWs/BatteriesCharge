@@ -5,6 +5,6 @@
 <template>
   <div class="col-md-6">
     <h3 class="text-align-center">{{battery.getNombre()}}</h3>
-    <apexchart width="500" type="area" :options="chartOptions" :series="series"></apexchart>
+    <apexchart type="area" :options="chartOptions" :series="series"></apexchart>
   </div>
 </template>

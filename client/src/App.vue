@@ -9,7 +9,7 @@
 <template>
   <div id="app">
     <header class="position-sticky top-0">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
         <a class="navbar-brand d-flex align-items-center m-0 p-0" href="#">
           <img src="./assets/logo.png" width="40" height="40" alt="" />
           <span class="h3 m-0 ml-3">Monitor de Baterias</span>
