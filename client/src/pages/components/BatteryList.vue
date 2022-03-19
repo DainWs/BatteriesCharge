@@ -3,10 +3,10 @@
 
 <!-- HTML -->
 <template>
-    <div class="container">
+    <div class="container col-md-12">
         <div class="row">
-            <h1 class="col-md-9">Baterias</h1>
-            <button class="col-md-3 btn btn-primary" type="button" @click="update">Actualizar</button>
+            <h1 class="col-md-6 mr-auto">Baterias</h1>
+            <a class="btn btn-light b-0 d-flex align-items-center hover-rotate" @click="update"><img src="../../assets/images/rotate-solid.svg" style="height: 1.5rem;"/></a>
         </div>
         <div class="row">
             <div class="col-md-12 d-flex flex-wrap">

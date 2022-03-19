@@ -3,7 +3,7 @@ class BatteryEntry {
         this.id = generalObject.id;
         this.batteriesId = generalObject.batteriesId;
         this.voltage = generalObject.voltage;
-        this.fecha = generalObject.fecha;
+        this.fecha = new Date(generalObject.fecha);
     }
 
     getId() {

@@ -32,5 +32,8 @@ app.get('/', (req, res) => {
         res.send(__dirname + '<h1>Not found</h1><br/><p>Es posible que el servidor este cargando y compilando la pagina,<br/> vuelva a intentarlo en unos 5-10 segundos aproximados.</p>');   
     }
 });
+app.get('/js/', (req, res) => {
+    res.sendFile(file);
+});
 
 createServer(app);

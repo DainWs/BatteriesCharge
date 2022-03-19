@@ -52,7 +52,7 @@ class Battery {
     }
 
     getEntries() {
-        return this.entries;
+        return this.entries.values();
     }
 
     addEntry(entry) {

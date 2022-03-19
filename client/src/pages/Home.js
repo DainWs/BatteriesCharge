@@ -13,8 +13,8 @@ export default {
     },
     mounted() {
         this.getBatteries();
-        setInterval(this.getBatteries.bind(this), (5 * 1000));
-       console.log(this.batteries);
+        //setInterval(this.getBatteries.bind(this), (5 * 1000));
+        console.log(this.batteries);
     },
     methods: {
         // add Battery methods
