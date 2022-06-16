@@ -1,8 +1,13 @@
 import axios from "axios";
+import { SocketController } from "../services/SocketController";
+import { UPDATE_BATTERIES } from "../services/SocketEvents";
+import { SocketObserver } from "../services/SocketObserver";
 import BatteryList from './components/BatteryList.vue';
 
+const COMPONENT_NAME = "Home";
+
 export default {
-    name: "Home",
+    name: COMPONENT_NAME,
     components: {
         BatteryList
     },
@@ -13,8 +18,8 @@ export default {
     },
     mounted() {
         this.getBatteries();
-        //setInterval(this.getBatteries.bind(this), (5 * 1000));
-        console.log(this.batteries);
+        SocketController.start();
+        SocketObserver.subscribe(UPDATE_BATTERIES, COMPONENT_NAME, this.updateBatteries.bind(this));
     },
     methods: {
         // add Battery methods
@@ -49,6 +54,9 @@ export default {
                 .catch((err) => {
                     console.log(err);
                 });
+        },
+        updateBatteries(data) {
+            console.log(data);
         }
     }
 };

@@ -34,7 +34,7 @@ class BatterySocketMock:
                 analogBatteryAsVoltage = round(self.convertToVoltage(analogBatteryInput), 2)
                 print('Battery voltage at ' + str(datetime.now()) + ' is ' + str(analogBatteryAsVoltage) + ' (input)')
 
-                batteryEntry = BatteryEntry(analogBatteryAsVoltage)
+                batteryEntry = BatteryEntry(battery.id, analogBatteryAsVoltage)
                 battery.add(batteryEntry)
                 BatteryListener().actionPerformed('batteryEntry', batteryEntry);
 

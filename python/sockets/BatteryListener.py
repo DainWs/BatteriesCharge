@@ -1,13 +1,7 @@
-from webRequests.BatteryEntryPostRequest import BatteryEntryPostRequest
-from webRequests.BatteryPostRequest import BatteryPostRequest
+from webRequests.UpdatePostRequest import UpdatePostRequest
 
 class BatteryListener:
-    def actionPerformed(self, type, object):
+    def actionPerformed(self, event, object):
         print(object)
-        request = ''
-        if (type == 'battery'):
-            request = BatteryPostRequest()
-        else:
-            request = BatteryEntryPostRequest()
-        
-        print(request.post(object).json())
+        request = UpdatePostRequest()
+        print(request.post(object))

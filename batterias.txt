@@ -1,0 +1,10 @@
+I searched for a few message for you.
+The basic theory of calculating battery level is E = P * T .
+E is the total energy of the battery, P is the power, T is the elapse of time.
+So first you have to calibrate the battery in a very low power.
+Use a resistor(a light bulb) and a ampere mete and a Voltmeter to set the circuit.
+Then you will get the P, and when the bulb extinguish, means you get the T.
+So E is the integration of P and T.
+When you use your battery, you can obtain the real value of U and I, the you get the real P.
+Use the integration method, you can get real time Energy consumption.
+That is the theory. And many companies build their own chip to do this job.

@@ -8,10 +8,10 @@ class Battery:
             self.nombre = 'battery_' + self.id
             self.entries = []
         else:
-            self.id = batteryModel['ID']
-            self.nombre = batteryModel['NOMBRE']
-            self.inputPin = batteryModel['INPUTPIN']
-            self.outputPin = batteryModel['OUTPUTPIN']
+            self.id = batteryModel['id'];
+            self.nombre = batteryModel['nombre']
+            self.inputPin = batteryModel['inputPin']
+            self.outputPin = batteryModel['outputPin']
             self.entries = []
 
     def setInputPin(self, pinNum):

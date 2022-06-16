@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install": "bash install.sh",
-    "start": "nodemon service.js",
+    "start": "cd client && npm run build && cd .. && nodemon service.js",
     "start-client": "cd client && npm run serve",
     "start-server": "cd server && npm run start"
   },
@@ -15,7 +15,8 @@
     "child_process": "^1.0.2",
     "express": "^4.17.3",
     "nodemon": "^2.0.15",
-    "pm2": "^5.2.0"
+    "pm2": "^5.2.0",
+    "socket.io": "^4.5.1"
   },
   "workspaces": [
     "client/",

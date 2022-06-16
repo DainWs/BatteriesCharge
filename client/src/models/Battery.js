@@ -56,9 +56,9 @@ class Battery {
     }
 
     addEntry(entry) {
-        entry.setId(this.entries.size);
-        entry.setBatteriesId(this.id);
-        this.entries.add(entry);
+        entry.id = this.entries.size;
+        entry.batteryId = this.id;
+        this.entries.add(new BatteryEntry(entry));
     }
 
     removeEntry(entry) {

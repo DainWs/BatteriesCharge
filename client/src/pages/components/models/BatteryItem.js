@@ -1,4 +1,8 @@
 import VueApexCharts from "vue3-apexcharts";
+import { UPDATE_BATTERIES } from "../../../services/SocketEvents";
+import { SocketObserver } from "../../../services/SocketObserver";
+
+const COMPONENT_NAME = "BatteryItem";
 
 export default {
     name: "BatteryItem",
@@ -9,8 +13,16 @@ export default {
         battery: Object
     },
     mounted() {
+        SocketObserver.subscribe(UPDATE_BATTERIES, COMPONENT_NAME, this.updateBatteries.bind(this));
     },
     methods: {
+        updateBatteries(data) {
+            console.log(data);
+            if (data.batteryId == this.battery.id) {
+                this.battery.addEntry(data);
+            }
+            console.log(this.battery);
+        }
     },
     computed: {
         chartOptions() {
@@ -37,12 +49,13 @@ export default {
         series() {
             var seriesData = [];
             let entries = this.battery.getEntries();
+            console.log(entries);
             Array.from(entries)
-                .filter((entry) => (Math.round((new Date() - entry.fecha) / 1000) < 25))
                 .sort((a, b) => a.fecha - b.fecha)
                 .forEach((entry) => {
                     seriesData.push(entry.voltage);
                 });
+            console.log(seriesData);
             if (seriesData.length < 5) {
                 let remainings = 5 - seriesData.length;
                 for (let i = 0; i < remainings; i++) {
