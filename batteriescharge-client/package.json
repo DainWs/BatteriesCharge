@@ -1,7 +1,7 @@
 {
-  "name": "client",
+  "name": "batteriescharge-client",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "",
   "author": "DainWs",
   "private": true,
   "scripts": {

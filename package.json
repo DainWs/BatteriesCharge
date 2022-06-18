@@ -1,7 +1,9 @@
 {
   "name": "batteriescharge",
-  "version": "1.0.0",
   "description": "",
+  "version": "1.0.0",
+  "author": "DainWs",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "install": "bash install.sh",
@@ -9,8 +11,6 @@
     "start-client": "cd client && npm run serve",
     "start-server": "cd server && npm run start"
   },
-  "author": "DainWs",
-  "license": "ISC",
   "dependencies": {
     "child_process": "^1.0.2",
     "express": "^4.17.3",
@@ -19,7 +19,7 @@
     "socket.io": "^4.5.1"
   },
   "workspaces": [
-    "client/",
+    "batteriescharge-client/",
     "server/"
   ]
 }
