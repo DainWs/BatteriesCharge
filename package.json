@@ -1,5 +1,5 @@
 {
-  "name": "batteriescharge",
+  "name": "downsbot",
   "description": "",
   "version": "1.0.0",
   "author": "DainWs",
@@ -7,9 +7,9 @@
   "main": "index.js",
   "scripts": {
     "install": "bash install.sh",
-    "start": "cd client && npm run build && cd .. && nodemon service.js",
-    "start-client": "cd client && npm run serve",
-    "start-server": "cd server && npm run start"
+    "start": "cd batteriescharge-webclient && npm run build && cd .. && nodemon service.js",
+    "start-client": "cd batteriescharge-webclient && npm run serve",
+    "start-server": "cd downs-server && npm run start"
   },
   "dependencies": {
     "child_process": "^1.0.2",
@@ -19,7 +19,7 @@
     "socket.io": "^4.5.1"
   },
   "workspaces": [
-    "batteriescharge-client/",
-    "server/"
+    "batteriescharge-webclient/",
+    "downs-server/"
   ]
 }
