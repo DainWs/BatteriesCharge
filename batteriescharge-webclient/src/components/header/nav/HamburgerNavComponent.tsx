@@ -6,7 +6,7 @@ const HamburgerNavComponent = function () {
     return (
         <div className='d-block d-sm-none w-100' style={{ zIndex: 3 }}>
             <nav className='navbar-light d-flex justify-content-start h-100'>
-                <a id='hamburger-menu' className='nav-link nav-icon' type='button' data-toggle='collapse' data-target='#navbarToggleExternalContent' aria-controls='navbarToggleExternalContent' aria-expanded='false' aria-label='Toggle navigation'>
+                <a id='hamburger-menu' href='#' className='nav-link nav-icon' type='button' data-toggle='collapse' data-target='#navbarToggleExternalContent' aria-controls='navbarToggleExternalContent' aria-expanded='false' aria-label='Toggle navigation'>
                     <FontAwesomeIcon icon={faBars} />
                 </a>
             </nav>

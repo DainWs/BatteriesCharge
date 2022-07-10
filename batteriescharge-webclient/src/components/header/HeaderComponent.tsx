@@ -3,8 +3,8 @@ import HamburgerNavComponent from './nav/HamburgerNavComponent';
 
 const HeaderComponent = function () {
   return (
-    <header className='position-fixed w-100' style={{ zIndex: 900 }}>
-      <nav className='nav d-flex justify-content-between bg-secondary'>
+    <header className='position-sticky top-0'>
+      <nav className='navbar navbar-expand-lg navbar-light bg-light py-0 px-3'>
         <NormalNavComponent/>
         <HamburgerNavComponent/>
       </nav>
