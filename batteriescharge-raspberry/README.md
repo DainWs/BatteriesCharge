@@ -1,6 +1,6 @@
-## Batteriescharge Python
+## Batteriescharge Raspberry
 **Author:** DainWs
-**Project ID:** batteriescharge-python
+**Project ID:** batteriescharge-raspberry
 
 ## Summary
 Raspberry Pi Power Supply measure
